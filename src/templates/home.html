@@ -1,6 +1,15 @@
 {% extends "base.html" %}
 {% block title %} Strona główna {% endblock %}
 
+{% block navbar %}
+<li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="/">Home</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="/register">Registration</a>
+</li>
+{% endblock navbar %}
+
 {% block content %}
 <br>
 <div class="text-center">
