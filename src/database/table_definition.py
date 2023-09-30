@@ -16,3 +16,15 @@ class Users(Base):
         self.username = username
         self.password_hash = password_hash
         self.salt = salt
+    
+    def is_active(self):
+        return True
+    
+    def get_id(self):
+        return self.user_id
+
+    def is_authenticated(self):
+        return self.authenticated
+
+    def is_anonymous(self):
+        return False
