@@ -1,9 +1,13 @@
-from flask import Flask
+from flask import Flask, Blueprint, request, render_template, flash
+from flask_login import login_required, current_user
 
-app = Flask(__name__)
+main = Blueprint("main", __name__)
 
-from views import views
+@main.route('/', methods = ['GET'])
+def home():
+    return render_template("home.html")
 
-app.register_blueprint(views)
-
-app.run(host="0.0.0.0", debug=False)
+@main.route('/profile')
+@login_required
+def profile():
+    return render_template('profile.html', user=current_user.username)
