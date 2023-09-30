@@ -1,14 +1,8 @@
-import requests
-from flask import Flask, Blueprint, request, render_template
+from flask import Flask
 
-views = Blueprint('views', __name__)
 app = Flask(__name__)
 
-@views.route('/', methods = ['GET'])
-def home():
-        
-    return render_template("home.html")
-
+from views import views
 
 app.register_blueprint(views)
 
